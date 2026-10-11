@@ -1,0 +1,120 @@
+const offers = [
+  {
+    title: "Desayuno especial",
+    text: "Café + tostadas + fruta fresca por 7,50 €",
+    tag: "Oferta"
+  },
+  {
+    title: "Brunch para dos",
+    text: "2 brunchs + 2 cafés por 22 €",
+    tag: "Popular"
+  },
+  {
+    title: "Happy hour",
+    text: "Bebidas calientes a mitad de precio de 17:00 a 18:00",
+    tag: "Hoy"
+  }
+];
+
+const products = [
+  {
+    name: "Flat White",
+    description: "Café intenso con leche cremosa y espuma suave.",
+    price: 3.8,
+    badge: "Top"
+  },
+  {
+    name: "Brioche de vainilla",
+    description: "Dulce y esponjoso, ideal para acompañar tu café.",
+    price: 4.2,
+    badge: "Nuevo"
+  },
+  {
+    name: "Tostada de aguacate",
+    description: "Con tomate, semillas y limón, muy fresca.",
+    price: 6.5,
+    badge: "Fresco"
+  },
+  {
+    name: "Capuccino",
+    description: "Clásico, equilibrado y perfecto para cualquier momento.",
+    price: 4.1,
+    badge: "Classic"
+  },
+  {
+    name: "Brunch completo",
+    description: "Huevos, tostadas, fruta y café de la casa.",
+    price: 12.5,
+    badge: "Best seller"
+  },
+  {
+    name: "Matcha latte",
+    description: "Bebida vegetal, cremosa y con un perfil suave.",
+    price: 5.4,
+    badge: "Vegano"
+  }
+];
+
+const renderOffers = () => {
+  const offersList = document.getElementById("offersList");
+  if (!offersList) return;
+
+  offersList.innerHTML = offers
+    .map(
+      (offer) => `
+        <article class="offer-card">
+          <span class="tag">${offer.tag}</span>
+          <h3>${offer.title}</h3>
+          <p>${offer.text}</p>
+        </article>
+      `
+    )
+    .join("");
+};
+
+const renderProducts = () => {
+  const grid = document.getElementById("productsGrid");
+  if (!grid) return;
+
+  grid.innerHTML = products
+    .map(
+      (product, index) => `
+        <article class="product-card">
+          <div
+            class="product-thumb"
+            style="background-image: url('https://images.unsplash.com/${[
+              "photo-1495474472287-4d71bcdd2085",
+              "photo-1504674900247-0877df9cc836",
+              "photo-1525351484163-7529414344d8",
+              "photo-1442512595331-e89e73853f31",
+              "photo-1547592180-85f173990554",
+              "photo-1551782450-a2132b4ba21d"
+            ][index % 6]}?auto=format&fit=crop&w=900&q=80');"
+          ></div>
+          <div class="product-body">
+            <h3>${product.name}</h3>
+            <p>${product.description}</p>
+            <div class="product-meta">
+              <span class="price">${product.price.toFixed(2)} €</span>
+              <span class="badge">${product.badge}</span>
+            </div>
+          </div>
+        </article>
+      `
+    )
+    .join("");
+};
+
+const initMenu = () => {
+  const toggle = document.querySelector(".nav-toggle");
+  const nav = document.querySelector(".nav-links");
+  if (!toggle || !nav) return;
+
+  toggle.addEventListener("click", () => {
+    nav.classList.toggle("open");
+  });
+};
+
+renderOffers();
+renderProducts();
+initMenu();

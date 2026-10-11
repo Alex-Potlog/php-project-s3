@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>El Gato Rumano | Café & Brunch</title>
+    <meta
+      name="description"
+      content="El Gato Rumano. Café, brunch, productos y contacto. Versión estática para alojamiento en S3."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Rubik:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <div class="container topbar">
+          <p>Purr-fect food for a purr-fect time.</p>
+          <nav>
+            <a href="#contacto">Ubicación y contacto</a>
+          </nav>
+        </div>
+
+        <div class="container nav-bar">
+          <a href="#inicio" class="brand" aria-label="El Gato Rumano home">
+            <span class="brand-mark">EGR</span>
+            <span class="brand-name">El Gato Rumano</span>
+          </a>
+
+          <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+
+          <nav class="nav-links" aria-label="Navegación principal">
+            <a href="#inicio">Home</a>
+            <a href="#productos">Productos</a>
+            <a href="#ofertas">Ofertas</a>
+            <a href="#contacto">Contacto</a>
+          </nav>
+        </div>
+      </header>
+
+      <main id="inicio">
+        <section class="hero">
+          <div class="container hero-grid">
+            <div class="hero-copy">
+              <p class="eyebrow">Café • Brunch • Comida casera</p>
+              <h1>La mesa siempre lista para ti.</h1>
+              <p class="lead">
+                En El Gato Rumano combinamos cocina sencilla, productos frescos y un
+                ambiente acogedor para empezar bien el día.
+              </p>
+              <div class="hero-actions">
+                <a class="btn btn-primary" href="#productos">Ver productos</a>
+                <a class="btn btn-secondary" href="#contacto">Reservar</a>
+              </div>
+              <ul class="mini-stats">
+                <li><strong>8:00</strong><span>Horario</span></li>
+                <li><strong>+200</strong><span>Clientes</span></li>
+                <li><strong>100%</strong><span>Casero</span></li>
+              </ul>
+            </div>
+
+            <div class="hero-visual" aria-label="Imagen del local">
+              <div class="visual-card">
+                <div class="image-placeholder">
+                  <span>Espresso • Brunch • Café</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="ofertas" class="section section-soft">
+          <div class="container">
+            <div class="section-heading">
+              <p class="eyebrow">Ofertas</p>
+              <h2>Especiales de la semana</h2>
+            </div>
+
+            <div class="offers-grid" id="offersList"></div>
+          </div>
+        </section>
+
+        <section id="productos" class="section">
+          <div class="container">
+            <div class="section-heading">
+              <p class="eyebrow">Productos</p>
+              <h2>Nuestros favoritos</h2>
+            </div>
+
+            <div id="productsGrid" class="products-grid" aria-live="polite"></div>
+          </div>
+        </section>
+
+        <section id="contacto" class="section contact-section">
+          <div class="container contact-box">
+            <div>
+              <p class="eyebrow">Contacto</p>
+              <h2>¿Quieres visitarnos?</h2>
+            </div>
+            <div class="contact-details">
+              <p>Riera de Cirera, 57 · Mataró</p>
+              <p>info@elgatorumano.com</p>
+              <p>+34 600 000 000</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container footer-grid">
+          <div>
+            <h3>El Gato Rumano</h3>
+            <p>Espacio de café, cultura y buen ambiente.</p>
+          </div>
+          <div>
+            <h4>Horario</h4>
+            <p>Lun - Vie: 08:00 - 20:00</p>
+            <p>Sab - Dom: 09:00 - 18:00</p>
+          </div>
+          <div>
+            <h4>Contacto</h4>
+            <p>Riera de Cirera, 57</p>
+            <p>Mataró, Barcelona</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
